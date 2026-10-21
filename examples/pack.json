@@ -1,0 +1,59 @@
+{
+  "schema": 1,
+  "sources": [
+    {
+      "id": "original-demo",
+      "title": "本项目原创算术示例",
+      "license": "MIT"
+    }
+  ],
+  "questions": [
+    {
+      "id": "math-add-v1",
+      "exam": "demo",
+      "type": "single",
+      "stem": "2 + 3 等于多少？",
+      "options": [
+        {
+          "id": "A",
+          "text": "4"
+        },
+        {
+          "id": "B",
+          "text": "5"
+        }
+      ],
+      "answer": [
+        "B"
+      ],
+      "sourceId": "original-demo",
+      "explanation": "2 + 3 = 5。"
+    },
+    {
+      "id": "math-even-v1",
+      "exam": "demo",
+      "type": "multiple",
+      "stem": "哪些数是偶数？",
+      "options": [
+        {
+          "id": "A",
+          "text": "2"
+        },
+        {
+          "id": "B",
+          "text": "3"
+        },
+        {
+          "id": "C",
+          "text": "4"
+        }
+      ],
+      "answer": [
+        "A",
+        "C"
+      ],
+      "sourceId": "original-demo",
+      "explanation": "2 和 4 都能被 2 整除。"
+    }
+  ]
+}

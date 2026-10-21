@@ -1,0 +1,32 @@
+{
+  "preparedOn": "2026-10-22",
+  "originProject": "cert-prep-miniprogram",
+  "originFile": "miniprogram/utils/engine.js",
+  "originSHA256": "62c78754bc2034ba6a9432270eb6210668404cd7b533fd22e4325dacd2b4cf3d",
+  "extractedConcepts": [
+    "source-linked study-pack validation",
+    "conflict-safe pack merge",
+    "exact answer grading",
+    "deterministic review scheduling and selection"
+  ],
+  "changes": [
+    "Generalized exam IDs",
+    "Removed platform and data imports",
+    "Added malformed-input and pending-state checks",
+    "Measured pack limits in UTF-8 bytes",
+    "Used independent arithmetic fixtures"
+  ],
+  "assistance": "Prepared and refactored with Codex assistance; no claim of unaided human authorship.",
+  "includedContent": "Only core logic and newly authored arithmetic examples.",
+  "excludedContent": [
+    "purchased materials",
+    "textbook text",
+    "question banks",
+    "personal learning state",
+    "customer documents",
+    "account configuration"
+  ],
+  "licenseStatus": "MIT_confirmed_by_rights_holder_2026-10-22",
+  "upstreamIntegrationStatus": "not_integrated_into_original_app",
+  "externalUsageEvidence": []
+}

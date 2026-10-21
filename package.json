@@ -1,0 +1,29 @@
+{
+  "name": "open-study-core",
+  "version": "0.1.0",
+  "description": "Source-aware study-pack validation, deterministic practice selection and spaced review extracted from Zhixu study tools.",
+  "private": true,
+  "license": "MIT",
+  "main": "src/index.cjs",
+  "files": [
+    "src/",
+    "examples/",
+    "docs/",
+    "README.md"
+  ],
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "test": "node --test tests/*.test.cjs",
+    "example": "node examples/review.cjs",
+    "check": "node scripts/check-release.cjs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/liangzhaofeng117-dev/open-study-core.git"
+  },
+  "bugs": {
+    "url": "https://github.com/liangzhaofeng117-dev/open-study-core/issues"
+  }
+}
