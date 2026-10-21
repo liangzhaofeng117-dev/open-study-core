@@ -5,11 +5,15 @@ permissions:
 jobs:
   core:
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node: ['18', '22']
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with:
-          node-version: '22'
+          node-version: ${{ matrix.node }}
       - run: npm test
       - run: npm run example
       - run: npm run check
+      - run: npm run validate -- examples/pack.json --exam demo

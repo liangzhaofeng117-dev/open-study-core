@@ -2,7 +2,7 @@
 
 从知序备考小程序提取的通用 JavaScript 学习组件：带来源的 JSON 资料包校验、冲突安全的增量导入、精确判分、间隔复习和可复现的练习选题。适合希望把内容与学习逻辑分开的工具开发者。
 
-**v0.1.0 采用 MIT 许可证。** 代码维护账号为 `liangzhaofeng117-dev`，仓库地址为 https://github.com/liangzhaofeng117-dev/open-study-core 。包设置为 `private: true` 以防止误发布到 npm；GitHub 源码按 [MIT 许可证](LICENSE) 使用。当前没有已核实的外部用户或下载量。
+**采用 MIT 许可证。** 代码维护账号为 `liangzhaofeng117-dev`，仓库地址为 https://github.com/liangzhaofeng117-dev/open-study-core 。包设置为 `private: true` 以防止误发布到 npm；GitHub 源码按 [MIT 许可证](LICENSE) 使用。当前没有已核实的外部用户或下载量。
 
 ## 快速运行
 
@@ -14,7 +14,24 @@ cd open-study-core
 npm test
 npm run example
 npm run check
+npm run validate -- examples/pack.json --exam demo
 ```
+
+## 直接校验自己的资料包
+
+无需编写接入代码，也无需安装依赖即可运行：
+
+```sh
+node bin/check-pack.cjs /path/to/pack.json
+node bin/check-pack.cjs /path/to/pack.json --exam math --exam language
+node bin/check-pack.cjs --help
+```
+
+成功时向标准输出写入 JSON 汇总，包括来源、知识卡、题目、任务及待核验题数量；失败时向标准错误写入 JSON 错误。返回码 `0` 表示有效，`1` 表示 JSON、UTF-8 或题包内容错误，`2` 表示参数、文件读取或容量错误，可用于导入前校验或 CI。文件名以横线开头时使用 `--` 分隔选项和文件名。
+
+CLI 只读取本地常规文件，不改写文件或上传内容；解析前限制最多读取 4,000,000 字节，拒绝不正确的 UTF-8，接受标准 UTF-8 BOM。它验证结构和引用，不核验知识正确性、来源真实性或内容授权。学习状态与个人资料仍由宿主应用保存。
+
+## 作为组件接入
 
 ```js
 const study = require('./src/index.cjs');
@@ -62,7 +79,7 @@ console.log(tomorrow.map(question => question.id));
 
 本组件改编自用户既有的知序备考学习引擎，提取与重写由 Codex 辅助完成；原始题库与平台代码未纳入。源文件摘要和变更范围记录在 [代码来源说明](docs/provenance.json)。原有小程序尚未切换到此组件，当前只是独立复用候选。
 
-欢迎在公开发布后提交可复现的缺陷报告、题包兼容性案例和小范围修复；流程见 [CONTRIBUTING.md](CONTRIBUTING.md)。本地版本变更记录见 [CHANGELOG.md](CHANGELOG.md)。
+欢迎提交可复现的缺陷报告、题包兼容性案例和小范围修复；流程见 [CONTRIBUTING.md](CONTRIBUTING.md)。版本变更记录见 [CHANGELOG.md](CHANGELOG.md)。
 
 ## English summary
 
