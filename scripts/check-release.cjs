@@ -3,7 +3,7 @@ const fs = require('node:fs');
 const path = require('node:path');
 const root = path.resolve(__dirname, '..');
 const pkg = JSON.parse(fs.readFileSync(path.join(root, 'package.json'), 'utf8'));
-const required = ['README.md', 'CONTRIBUTING.md', 'MAINTAINERS.md', 'CHANGELOG.md', 'docs/pack-format.md', 'docs/provenance.json', 'src/index.cjs', 'examples/pack.json', 'tests/core.test.cjs', '.github/workflows/test.yml'];
+const required = ['README.md', 'CONTRIBUTING.md', 'MAINTAINERS.md', 'CHANGELOG.md', 'docs/pack-format.md', 'docs/provenance.json', 'src/index.cjs', 'bin/check-pack.cjs', 'examples/pack.json', 'tests/core.test.cjs', 'tests/cli.test.cjs', '.github/workflows/test.yml'];
 const missing = required.filter(file => !fs.existsSync(path.join(root, file)));
 const blockers = [];
 if (!fs.existsSync(path.join(root, 'LICENSE')) || pkg.license === 'UNLICENSED') blockers.push('许可证尚未由权利人确认并启用');

@@ -1,11 +1,13 @@
 {
   "name": "open-study-core",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Source-aware study-pack validation, deterministic practice selection and spaced review extracted from Zhixu study tools.",
   "private": true,
   "license": "MIT",
   "main": "src/index.cjs",
+  "bin": {"open-study-check": "bin/check-pack.cjs"},
   "files": [
+    "bin/",
     "src/",
     "examples/",
     "docs/",
@@ -17,7 +19,8 @@
   "scripts": {
     "test": "node --test tests/*.test.cjs",
     "example": "node examples/review.cjs",
-    "check": "node scripts/check-release.cjs"
+    "check": "node scripts/check-release.cjs",
+    "validate": "node bin/check-pack.cjs"
   },
   "repository": {
     "type": "git",
